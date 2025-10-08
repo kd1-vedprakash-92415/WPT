@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunbeam Registration Form</title>
+</head>
+
+<body>
+    <div>
+        <center><img src="./Images/sunbeam_logo.png" alt=""></center>
+    </div>
+    <h1 align="center"><b>Sunbeam Registration Form</b></h1>
+    <div>
+        <form>
+            <table cellspacing="15">
+                <tr>
+                    <td rowspan="0">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/Az5Bt3zUtiM?si=FH-SctiXDRSytZyU"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </td>
+                    <td><label for="name"><b>Name :</b></label></td>
+                    <td><input id="name" type="text" required></td>
+                </tr>
+                <tr>
+                    <td><label for=""><b>Date:</b></label></td>
+                    <td><input id="" type="date" required></td>
+                </tr>
+                <tr>
+                    <td><label for="email"><b>Email:</b></label></td>
+                    <td><input id="email" type="email" required></td>
+                </tr>
+                <tr>
+                    <td> <label for="password"><b>Password:</b></label></td>
+                    <td><input type="password" id="password" required></td>
+                </tr>
+                <tr>
+                    <td><label for="address"><b>Address:</b></label></td>
+                    <td><textarea name="address" id="address" cols="20" rows="10" required></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="gender"><b>Gender:</b></label></td>
+                    <td><input id="gender" type="radio" name="gender" value="male">Male
+                        <input type="radio" name="gender" value="female" required> Female
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for=""><b>Profile Photo:</b></label></td>
+                    <td><input type="file" name="file" id="" required></td>
+                </tr>
+                <tr>
+                    <td><label for="city"><b>Select Course:</b></label></td>
+                    <td><select name="city" id="city" required>
+                            <option>Select course</option>
+                            <option>DAC</option>
+                            <option>DMC</option>
+                            <option>DITISS</option>
+                            <option>DBDA</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td><b><label for="">Skill Set:</label></b></td>
+                    <td><input type="checkbox" name="checkBoxJava" value="Java" required>Java
+                        <input type="checkbox" name="checkBoxCPP" value="CPP" required>CPP
+                        <input type="checkbox" name="checkBoxOS" value="OS" required>OS
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Register" required>
+                        <input type="reset" value="Clear" required>
+                    </td>
+
+                </tr>
+
+            </table>
+        </form>
+    </div>
+
+</body>
+
+</html>
