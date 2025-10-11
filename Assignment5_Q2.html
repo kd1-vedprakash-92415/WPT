@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function f1(){
+            let number=parseInt(prompt("Enter the number of times to print the message:"));
+
+            if(number<=0){
+                alert("Please Enter a valid positive integer!");
+                return;
+            }
+            let message=prompt("Enter the message:")
+
+            console.log("Repeated Message:")
+            for(let i=1;i<=number;i++){
+                console.log(i+"."+message)
+            }
+            alert("Check the Console for the repeated message")
+        };
+
+        f1()
+
+    </script>
+</body>
+
+</html>

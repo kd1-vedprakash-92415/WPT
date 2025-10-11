@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5Sticky - Sticky Notes</title>
+
+    <link rel="stylesheet" href="./Assignment4_Q1_main.css" />
+    <link rel="stylesheet" href="./Assignment4_Q1.css" />
+</head>
+
+<body>
+
+    <header id="head">
+        <div style="display:flex; align-items:center">
+            <a href="">
+                <h1>HTML5Sticky <br><small>sticky notes for web !</small></h1>
+            </a>
+
+            <div class="left topsection">
+                <a href="#" id="addnote" class="tooltip blue-tooltip">
+                    <img src="./Images/add.png" alt="Add a new sticky note">
+                </a>
+                <a href="#" id="removenotes" class="tooltip blue-tooltip" style="display: block;">
+                    <img src="./Images/remove.png" alt="Remove all sticky notes">
+                </a>
+                <a href="#" id="shrink" class="tooltip blue-tooltip">
+                    <img src="./Images/decrease.png" alt="Shrink">
+                </a>
+                <a href="#" id="expand" class="tooltip blue-tooltip">
+                    <img src="./Images/increase.png" alt="Expand">
+                </a>
+            </div>
+        </div>
+
+        <div class="right topsection" style="display:flex; align-items:center">
+            <a id="donate" class="tooltip blue-tooltip" target="_blank"
+                href="https://www.plimus.com/jsp/buynow.jsp?contractId=3035018"
+                title="Secure Online Payments by Plimus">
+                <img src="./Images/donate.jpg" alt="Secure Online Payments and Credit Card Processing by Plimus"
+                    border="0">
+            </a>
+            <a id="twitter" class="tooltip blue-tooltip" href="http://twitter.com/#!/sarfraznawaz" target="_blank">
+                <img src="./Images/twitter.png" alt="Follow Me">
+            </a>
+        </div>
+    </header>
+
+    <div id="main">
+
+        <div class="note_common" style="width: 200px; height: 200px; background-color:#f73414">
+            <div align="center" style="position: absolute; z-index: 99; top: -30px; left: 90px;">
+                <img src="./Images/pin.png" alt="">
+            </div>
+            <div style="position: absolute; top: -15px; right: -15px;">
+                <a href="#" class="delete_stickynote">
+                    <img src="./Images/delete.png" alt="" title="delete note">
+                </a>
+            </div>
+            <h2>3/18/2020 12:40 PM</h2>
+            <ul>
+                <input type="text" class="form-control" placeholder="Enter text here">
+            </ul>
+            <span id="idf_1stickynote"></span>
+        </div>
+
+        <div class="note_common"
+            style="width: 200px; height: 200px; background-image: -webkit-gradient(linear, left top, left bottom, from(#A5C2FF), to(#6986F4));">
+            <div align="center" style="position: absolute; z-index: 99; top: -30px; left: 90px;">
+                <img src="./Images/pin.png" alt="">
+            </div>
+            <div style="position: absolute; top: -15px; right: -15px;">
+                <a href="#" class="delete_stickynote">
+                    <img src="./Images/delete.png" alt="" title="delete note">
+                </a>
+            </div>
+            <h2>3/18/2020 12:40 PM</h2>
+            <ul>
+                <input type="text" class="form-control" placeholder="Enter text here">
+            </ul>
+            <span id="idf_2stickynote"></span>
+        </div>
+
+        <div class="note_common"
+            style="width: 200px; height: 200px; background-image: -webkit-gradient(linear, left top, left bottom, from(#3889C5), to(#024B7E));">
+            <div align="center" style="position: absolute; z-index: 99; top: -30px; left: 90px;">
+                <img src="./Images/pin.png" alt="">
+            </div>
+            <div style="position: absolute; top: -15px; right: -15px;">
+                <a href="#" class="delete_stickynote">
+                    <img src="./Images/delete.png" alt="" title="delete note">
+                </a>
+            </div>
+            <h2>3/18/2020 12:40 PM</h2>
+            <ul>
+                <input type="text" class="form-control" placeholder="Enter text here">
+            </ul>
+            <span id="idf_1stickynote"></span>
+        </div>
+
+        <div class="note_common" style="width: 200px; height: 200px; background-color:#f73414">
+            <div align="center" style="position: absolute; z-index: 99; top: -30px; left: 90px;">
+                <img src="./Images/pin.png" alt="">
+            </div>
+            <div style="position: absolute; top: -15px; right: -15px;">
+                <a href="#" class="delete_stickynote">
+                    <img src="./Images/delete.png" alt="" title="delete note">
+                </a>
+            </div>
+            <h2>3/18/2020 12:40 PM</h2>
+            <ul>
+                <input type="text" class="form-control" placeholder="Enter text here">
+            </ul>
+            <span id="idf_2stickynote"></span>
+        </div>
+
+        <div class="note_common"
+            style="width: 200px; height: 200px; background-image: -webkit-gradient(linear, left top, left bottom, from(#5F36BC), to(#250082));">
+            <div align="center" style="position: absolute; z-index: 99; top: -30px; left: 90px;">
+                <img src="./Images/pin.png" alt="">
+            </div>
+            <div style="position: absolute; top: -15px; right: -15px;">
+                <a href="#" class="delete_stickynote">
+                    <img src="./Images/delete.png" alt="" title="delete note">
+                </a>
+            </div>
+            <h2>3/18/2020 12:40 PM</h2>
+            <ul>
+                <input type="text" class="form-control" placeholder="Enter text here">
+            </ul>
+            <span id="idf_1stickynote"></span>
+        </div>
+
+        <div class="note_common"
+            style="width: 200px; height: 200px; background-image: -webkit-gradient(linear, left top, left bottom, from(#FEBF80), to(#FF8000));">
+            <div align="center" style="position: absolute; z-index: 99; top: -30px; left: 90px;">
+                <img src="./Images/pin.png" alt="">
+            </div>
+            <div style="position: absolute; top: -15px; right: -15px;">
+                <a href="#" class="delete_stickynote">
+                    <img src="./Images/delete.png" alt="" title="delete note">
+                </a>
+            </div>
+            <h2>3/18/2020 12:40 PM</h2>
+            <ul>
+                <input type="text" class="form-control" placeholder="Enter text here">
+            </ul>
+            <span id="idf_2stickynote"></span>
+        </div>
+
+        <div class="note_common"
+            style="width: 200px; height: 200px; background-image: -webkit-gradient(linear, left top, left bottom, from(#FEBF80), to(#FF8000));">
+            <div align="center" style="position: absolute; z-index: 99; top: -30px; left: 90px;">
+                <img src="./Images/pin.png" alt="">
+            </div>
+            <div style="position: absolute; top: -15px; right: -15px;">
+                <a href="#" class="delete_stickynote">
+                    <img src="./Images/delete.png" alt="" title="delete note">
+                </a>
+            </div>
+            <h2>3/18/2020 12:40 PM</h2>
+            <ul>
+                <input type="text" class="form-control" placeholder="Enter text here">
+            </ul>
+            <span id="idf_1stickynote"></span>
+        </div>
+
+        <div class="note_common"
+            style="width: 200px; height: 200px; background-image: -webkit-gradient(linear, left top, left bottom, from(#FEBFBF), to(#FE8080));">
+            <div align="center" style="position: absolute; z-index: 99; top: -30px; left: 90px;">
+                <img src="./Images/pin.png" alt="">
+            </div>
+            <div style="position: absolute; top: -15px; right: -15px;">
+                <a href="#" class="delete_stickynote">
+                    <img src="./Images/delete.png" alt="" title="delete note">
+                </a>
+            </div>
+            <h2>3/18/2020 12:40 PM</h2>
+            <ul>
+                <input type="text" class="form-control" placeholder="Enter text here">
+            </ul>
+            <span id="idf_2stickynote"></span>
+        </div>
+
+    </div>
+
+    <div class="clear">&nbsp;</div>
+    <div class="clear">&nbsp;</div>
+
+    <footer>
+        <div class="tbl">
+            <div class="cell">
+                <a href="https://twitter.com/" target="_blank" class="tweet">
+                    <i>
+                        <img src="./Images/twitter-color-svgrepo-com.svg" alt="">
+                    </i>
+                    <span>Tweet</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true"
+        style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;"
+        title="Twitter analytics iframe"></iframe>
+    <iframe name="oauth2relay1287014151" id="oauth2relay1287014151"
+        src="https://accounts.google.com/o/oauth2/postmessageRelay?parent=file%3A%2F%2F&amp;jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.J8aLcn7bYF8.O%2Fd%3D1%2Frs%3DAHpOoo-YaQN_2soL6ZNher0ZcTp3d4Q_nw%2Fm%3D__features__#rpctoken=563561801&amp;forcesecure=1"
+        tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe>
+
+</body>
+
+</html>

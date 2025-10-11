@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const n1 = prompt("Enter the first positive number")
+        console.log("n1:" + n1)
+
+        if (n1 <= 0) {
+            alert("Please enter valid positive number")
+        }
+
+        const n2 = prompt("Enter the second positive number")
+        console.log("n2:" + n2)
+
+        if (n2 <= 0) {
+            alert("Please enter valid positive number")
+        }
+
+        const n3 = prompt("Enter the third positive number")
+        console.log("n3:" + n3)
+
+        if (n3 <= 0) {
+            alert("Please enter valid positive number")
+        }
+
+        if (n1 >= n2 && n1 >= n3) {
+            alert("The largest number is: " + n1)
+        }
+        if (n2 >= n1 && n2 >= n3) {
+            alert("The largest number is: " + n2)
+        }
+        if (n3 >= n1 && n3 >= n2){
+           alert("The largest number is: " + n3)
+        }
+    </script>
+</body>
+
+</html>
