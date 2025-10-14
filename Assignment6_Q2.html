@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: grid;
+            justify-content: center;
+            border: 2px solid rgb(160, 156, 156);
+            width: 400px;
+            padding: 10px;
+            margin: auto;
+        }
+
+        #buttons {
+            display: grid;
+            justify-content: center;
+            gap: 10px;
+            grid-template-columns: auto auto auto auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            text-align: left;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Calculator</h1>
+        <table>
+            <tr>
+                <td>Enter Number 1</td>
+                <td><input type="number" id="id_n1"></td>
+            </tr>
+            <tr>
+                <td>Enter Number 2</td>
+                <td><input type="number" id="id_n2"></td>
+            </tr>
+            <tr>
+                <td>Result</td>
+                <td><input type="number" id="id_result" readonly></td>
+            </tr>
+        </table>
+        <br>
+    </div>
+    <div id="buttons">
+        <button onclick="addition()">Addition</button>
+        <button onclick="substraction()">Substraction</button>
+        <button onclick="multiplication()">Multiplication</button>
+        <button onclick="division()">Division</button>
+    </div>
+
+    <script>
+        function addition() {
+            let n1 = document.getElementById("id_n1").value;
+            let n2 = document.getElementById("id_n2").value;
+            document.getElementById("id_result").value = parseInt(n1) + parseInt(n2);
+        }
+        function substraction() {
+            let n1 = document.getElementById("id_n1").value;
+            let n2 = document.getElementById("id_n2").value;
+            document.getElementById("id_result").value = parseInt(n1) - parseInt(n2);
+        }
+        function multiplication() {
+            let n1 = document.getElementById("id_n1").value;
+            let n2 = document.getElementById("id_n2").value;
+            document.getElementById("id_result").value = parseInt(n1) * parseInt(n2);
+        }
+        function division() {
+            let n1 = document.getElementById("id_n1").value;
+            let n2 = document.getElementById("id_n2").value;
+            document.getElementById("id_result").value = parseInt(n1) / parseInt(n2);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date & Greeting </title>
+    <style>
+        .label-text {
+            color: red;
+        }
+
+        .days-value {
+            color: blue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <html>
+
+    <head>
+        <title>Date & Greeting Web Page</title>
+    </head>
+
+    <body>
+        <h1>Date & Greeting Web Page</h1>
+        <p id="dateGreeting"></p>
+        <p id="daysLeft"></p>
+
+        <script type="text/javascript">
+            const now = new Date();
+
+            const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const months = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"];
+            const formattedDate = weekdays[now.getDay()] + ", " + now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear();
+
+            let greeting = "";
+            const hour = now.getHours();
+            if (hour < 12) {
+                greeting = "Good Morning";
+            } else if (hour < 18) {
+                greeting = "Good Afternoon";
+            } else {
+                greeting = "Good Evening";
+            }
+
+            document.getElementById("dateGreeting").innerHTML = "Today is " + formattedDate + ",<br> Welcome, and " + greeting + " to You.";
+            document.getElementById("dateGreeting").style.color = "red";
+            document.getElementById("dateGreeting").style.fontSizeAdjust = "0.75"
+
+            const endOfYear = new Date(now.getFullYear(), 11, 31); // Dec 31
+            const timeDiff = endOfYear - now;
+            const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+
+            document.getElementById("daysLeft").innerHTML =
+                '<span class="label-text"> Number of days left till end of year: </span>' +
+                '<span class= "days-value">' + daysLeft + '</span>';
+
+
+            document.getElementById("daysLeft").style.fontWeight = "bold";
+            document.getElementById("daysLeft").style.fontSizeAdjust = "0.75"
+        </script>
+    </body>
+
+    </html>
+
+</body>
+
+</html>

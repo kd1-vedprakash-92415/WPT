@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunbeam Registration Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        td {
+            padding: 4px;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+        }
+
+        .success-message {
+            color: green;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div align="center">
+        <img src="./sunbeamlogo.png" alt="dac" title="PG-DAC">
+
+        <h1>Sunbeam Registration Form</h1>
+
+        <form id="myForm" onsubmit="return validateForm()">
+            <table>
+                <tr>
+                    <td rowspan="20"><iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/02q9aAVv1NI?si=pfvOuHUD7iAhe-Sj"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></td>
+                    <td><b>Name:</b></td>
+                    <td><input type="text" id="name"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td id="nameError" class="error-message"></td>
+                </tr>
+
+                <tr>
+                    <td><b>Date of Birth:</b></td>
+                    <td><input type="date" id="date"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td id="dateError" class="error-message"></td>
+                </tr>
+
+                <tr>
+                    <td><b>Email:</b></td>
+                    <td><input type="email" id="email"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td id="emailError" class="error-message"></td>
+                </tr>
+
+                <tr>
+                    <td><b>Password:</b></td>
+                    <td><input type="password" id="password"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td id="passwordError" class="error-message"></td>
+                </tr>
+
+                <tr>
+                    <td><b>Address:</b></td>
+                    <td><textarea id="address"></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td id="addressError" class="error-message"></td>
+                </tr>
+
+                <tr>
+                    <td><b>Gender:</b></td>
+                    <td>
+                        <input type="radio" name="gender" value="Male">Male
+                        <input type="radio" name="gender" value="Female">Female
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td id="genderError" class="error-message"></td>
+                </tr>
+
+                <tr>
+                    <td><b>Profile Photo:</b></td>
+                    <td><input id="file" type="file" name="file"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td id="fileError" class="error-message"></td>
+
+                </tr>
+                <tr>
+                    <td><b>Course:</b></td>
+                    <td>
+                        <select id="course">
+                            <option value="">--Select--</option>
+                            <option>PGDAC</option>
+                            <option>PGDMC</option>
+                            <option>PGDITISS</option>
+                            <option>PGDESD</option>
+                            <option>PGDBDA</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td id="courseError" class="error-message"></td>
+                </tr>
+
+                <tr>
+                    <td><b>Skill Set:</b></td>
+                    <td>
+                        <input type="checkbox" name="skills" value="JAVA">JAVA
+                        <input type="checkbox" name="skills" value="CPP">CPP
+                        <input type="checkbox" name="skills" value="OS">OS
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td id="skillError" class="error-message"></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="submit">Register</button>
+                        <button type="reset">Reset</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#myForm").on("submit", function (e) {
+                e.preventDefault(); // prevent form submission
+                clearMessages();
+                let valid = true;
+
+                let name = $.trim($("#name").val());
+                let date = $("#date").val();
+                let email = $.trim($("#email").val());
+                let password = $("#password").val();
+                let address = $.trim($("#address").val());
+                let gender = $("input[name='gender']:checked").val();
+                let file = $.trim($("#file").val());
+                let course = $("#course").val();
+                let skills = $("input[name='skills']:checked");
+
+                // NAME VALIDATION (only alphabets, max 10 chars)
+                if (name === "") {
+                    showError("#nameError", "Name is required");
+                    valid = false;
+                } else if (!/^[A-Za-z]+$/.test(name)) {
+                    showError("#nameError", "Only alphabets allowed");
+                    valid = false;
+                } else if (name.length > 10) {
+                    showError("#nameError", "Name must not exceed 10 characters");
+                    valid = false;
+                }
+
+                // DATE VALIDATION (must be past & >=18 years)
+                if (date === "") {
+                    showError("#dateError", "Date of Birth is required");
+                    valid = false;
+                } else {
+                    let dob = new Date(date);
+                    let today = new Date();
+                    if (dob >= today) {
+                        showError("#dateError", "Date must be in the past");
+                        valid = false;
+                    } else {
+                        let age = today.getFullYear() - dob.getFullYear();
+                        let m = today.getMonth() - dob.getMonth();
+                        if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) age--;
+                        if (age < 18) {
+                            showError("#dateError", "You must be at least 18 years old");
+                            valid = false;
+                        }
+                    }
+                }
+
+                // EMAIL VALIDATION
+                if (email === "") {
+                    showError("#emailError", "Email is required");
+                    valid = false;
+                }
+
+                // PASSWORD VALIDATION (length>8, must contain # and one digit)
+                if (password.length < 9) {
+                    showError("#passwordError", "Password must be greater than 8 characters");
+                    valid = false;
+                } else {
+                    let hasHash = password.includes("#");
+                    let hasDigit = /\d/.test(password);
+                    if (!hasHash) {
+                        showError("#passwordError", "Password must contain #");
+                        valid = false;
+                    } else if (!hasDigit) {
+                        showError("#passwordError", "Password must contain at least one digit");
+                        valid = false;
+                    }
+                }
+
+                // ADDRESS
+                if (address === "") {
+                    showError("#addressError", "Address is required");
+                    valid = false;
+                }
+
+                // GENDER
+                if (!gender) {
+                    showError("#genderError", "Select your gender");
+                    valid = false;
+                }
+
+                // PROFILE PHOTO
+                if (file === "") {
+                    showError("#fileError", "Photo is required");
+                    valid = false;
+                }
+
+                // COURSE
+                if (course === "") {
+                    showError("#courseError", "Select a course");
+                    valid = false;
+                }
+
+                // SKILL SET
+                if (skills.length === 0) {
+                    showError("#skillError", "Select at least one skill");
+                    valid = false;
+                }
+
+                // SUCCESS
+                if (valid) {
+                    $("#result").html("<p class='success-message'>Form Submitted Successfully!</p>");
+                }
+            });
+
+            function showError(selector, msg) {
+                $(selector).text(msg);
+            }
+
+            function clearMessages() {
+                $(".error-message").text("");
+                $("#result").html("");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
