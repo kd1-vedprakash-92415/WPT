@@ -12,6 +12,16 @@ export async function findUserByCredentials({email, passwd}) {
     throw new Error(resp?.error)
 }
 
+export async function registerUser({name,email,password,confirmPassword,mobile}){
+    const url=BASE_URL+"/users"
+    const response=await axios.post(url,{name,email,password,confirmPassword,mobile})
+    const resp=response.data;
+    console.log(resp)
+    if(resp?.status=='success')
+        return resp.data
+    throw new Error(resp?.error)
+}
+
 export async function changePassword(newPassword) {
     const url = BASE_URL + "/users/password"
     const token = sessionStorage.getItem("token")
@@ -26,4 +36,5 @@ export async function changePassword(newPassword) {
         return resp.data
     throw new Error(resp?.error)
 }
+
 
